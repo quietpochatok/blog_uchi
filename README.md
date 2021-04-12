@@ -1,24 +1,14 @@
-# README
+# Простенький блок "Times-blog"
+Приложение предназначено для написания блогов. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Описание
+Блог является последнием заданием в тестовом задании от компании 
+Версия приложения на [heroku](https://times-blog.herokuapp.com/)
 
-Things you may want to cover:
 
-* Ruby version
+## Основные характеристики приложения:
+ruby version 2.7.0
 
-* System dependencies
+rails version 6.0.3
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+webpacker version ~> 4.0
