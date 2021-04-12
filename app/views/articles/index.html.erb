@@ -11,17 +11,20 @@
 
   <tbody>
     <% @articles.each do |article| %>
-      <tr><%= article.title %></tr>
+      <tr><td><%= article.title %></td></tr>
         
       <tr>
         <td><%= link_to 'Show', article %></td>
+         <% if current_user_can_edit?(@article) %>
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if current_user_can_edit?(@article) %>
 <%= link_to 'New Article', new_article_path %>
+ <% end %>
