@@ -6,5 +6,7 @@
 </p>
 <br>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
+         <% if current_user_can_edit?(@article) %>
+        <td><%= link_to 'Edit', edit_article_path(@article) %></td>
+        <% end %>
 <%= link_to 'Back', articles_path %>
