@@ -16,6 +16,7 @@
       <tr>
         <td><%= link_to 'Show', article %></td>
          <% if current_user_can_edit?(article) %>
+         
         <td><%= link_to 'Edit', edit_article_path(article) %></td>
         <% end %>
         <% if current_user_can_edit?(article) %>
