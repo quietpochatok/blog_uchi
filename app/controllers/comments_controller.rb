@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  # Настроим фильтры. Нам нужно, во-первых, задать родительский event
+  # Настроим фильтры. Нам нужно, во-первых, задать родительский article
   # чтобы понимал откуда удалять?
   # before_action :set_article, only: [:create, :destroy]
 
@@ -8,7 +8,10 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
+    # Создаём объект @comment из @article
+    @comment = @article.comments.build(comment_params)
+    # Проставляем пользователя, если он задан
+    @comment.user = current_user
 
     if @comment.save
       redirect_to @comment, notice: 'Comment was successfully created.'
